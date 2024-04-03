@@ -1,4 +1,4 @@
-fn foo_bar_qix(number: usize) -> String {
+pub fn foo_bar_qix(number: usize) -> String {
     if number % 3 == 0 {
         return "Foo".to_string();
     }
@@ -27,5 +27,3 @@ mod tests {
         assert_eq!(result, "Foo")
     }
 }
-
-fn main() {}
