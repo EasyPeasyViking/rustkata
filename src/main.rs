@@ -6,8 +6,8 @@ fn greet() -> &'static str {
     "Hello, world!"
 }
 
-fn foo_bar_qix(_number: usize) -> String {
-    "1".to_string()
+fn foo_bar_qix(number: usize) -> String {
+    number.to_string()
 }
 
 #[cfg(test)]
@@ -25,5 +25,11 @@ mod tests {
     fn it_returns_1_if_input_is_1() {
         let result = foo_bar_qix(1);
         assert_eq!(result, "1")
+    }
+
+    #[test]
+    fn it_returns_2_if_input_is_2() {
+        let result = foo_bar_qix(2);
+        assert_eq!(result, "2")
     }
 }
