@@ -15,4 +15,14 @@ mod tests {
         let result = greet();
         assert_eq!(result, "Hello, world!");
     }
+
+    #[test]
+    fn it_returns_1_if_input_is_1() {
+        let result = foo_bar_qix(1);
+        assert_eq!(result, "1")
+    }
+
+    fn foo_bar_qix(_number: usize) -> String {
+        "1".to_string()
+    }
 }
