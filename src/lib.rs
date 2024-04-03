@@ -1,14 +1,22 @@
 pub fn foo_bar_qix(number: usize) -> String {
+    let mut result= "".to_string();
     if number == 3 {
-        return "FooFoo".to_string();
+        result.push_str("Foo");
     }
+
     if number % 3 == 0 {
-        return "Foo".to_string();
+        result.push_str("Foo");
     }
+
     if number % 5 == 0 {
-        return "Bar".to_string();
+        result.push_str("Bar");
     }
-    number.to_string()
+
+    if result.is_empty() {
+        return number.to_string()
+    }
+
+    result
 }
 
 #[cfg(test)]
