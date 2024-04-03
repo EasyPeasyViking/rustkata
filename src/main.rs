@@ -7,12 +7,14 @@ fn greet() -> &'static str {
 }
 
 fn foo_bar_qix(number: usize) -> String {
+    if number % 3 == 0 {
+        return "Foo".to_string()
+    }
     number.to_string()
 }
 
 #[cfg(test)]
 mod tests {
-
     use crate::{foo_bar_qix, greet};
 
     #[test]
@@ -31,5 +33,11 @@ mod tests {
     fn it_returns_2_if_input_is_2() {
         let result = foo_bar_qix(2);
         assert_eq!(result, "2")
+    }
+
+    #[test]
+    fn it_returns_foo_if_the_number_is_divisible_by_3() {
+        let result = foo_bar_qix(3);
+        assert_eq!(result, "Foo")
     }
 }
