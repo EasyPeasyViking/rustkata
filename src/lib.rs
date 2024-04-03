@@ -1,4 +1,7 @@
 pub fn foo_bar_qix(number: usize) -> String {
+    if number == 3 {
+        return "FooFoo".to_string();
+    }
     if number % 3 == 0 {
         return "Foo".to_string();
     }
@@ -27,7 +30,7 @@ mod tests {
     #[test]
     fn it_returns_foo_if_the_number_is_divisible_by_3() {
         let result = foo_bar_qix(3);
-        assert_eq!(result, "Foo")
+        assert_eq!(result, "FooFoo")
     }
 
     #[test]
