@@ -1,27 +1,13 @@
-fn main() {
-    println!("{}", greet());
-}
-
-fn greet() -> &'static str {
-    "Hello, world!"
-}
-
 fn foo_bar_qix(number: usize) -> String {
     if number % 3 == 0 {
-        return "Foo".to_string()
+        return "Foo".to_string();
     }
     number.to_string()
 }
 
 #[cfg(test)]
 mod tests {
-    use crate::{foo_bar_qix, greet};
-
-    #[test]
-    fn it_returns_a_greeting_message() {
-        let result = greet();
-        assert_eq!(result, "Hello, world!");
-    }
+    use crate::{foo_bar_qix};
 
     #[test]
     fn it_returns_1_if_input_is_1() {
@@ -41,3 +27,5 @@ mod tests {
         assert_eq!(result, "Foo")
     }
 }
+
+fn main() {}
